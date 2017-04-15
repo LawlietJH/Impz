@@ -9,7 +9,7 @@
 #                       ██║██║ ╚═╝ ██║██║     ███████╗
 #                       ╚═╝╚═╝     ╚═╝╚═╝     ╚══════╝
 #                                                         By: LawlietJH
-#                                                               v1.0.1
+#                                                               v1.0.2
 # Fuente: 'ANSI Shadow' - Desde: http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Impz
 
 import time
@@ -19,7 +19,7 @@ import os
 
 
 Autor = "LawlietJH"
-Version = "v1.0.1"
+Version = "v1.0.2"
 
 
 
@@ -29,13 +29,13 @@ def Imp_27(Minim=0):
 	
 	Total = 10000000
 
-	open("Impz-27.ZioN","a")
-	Eny = open("Impz-27.ZioN","w")
+	open("Impz-27["+str(Minim)+" - "+str(Total-1)+"].ZioN","a")
+	Eny = open("Impz-27["+str(Minim)+" - "+str(Total-1)+"].ZioN","w")
 	
 	print("\n\n\n\t [+] Creando Diccionario. 99% Efectivo.")
 	print("\n\t    [~] Para Hackear Redes: 'Cisco Pegatron'.")
-	print("\n\t    [~] Archivo de Salida:  'Imp-27.ZioN'.")
-	print("\n\t    [~] Tamaño Salida Aprox: 100 Mb.")
+	print("\n\t    [~] Archivo de Salida:  'Impz-27["+str(Minim)+" - "+str(Total-1)+"].ZioN'")
+	print("\n\t    [~] Tamaño Salida Aprox:", (Total-Minim) / 100000, "Mb")
 	print("\n\t    [~] Cantidad de Cadenas:", Total-Minim, "\n\n\n\n")
 	
 	for x in range(Minim, Total):
@@ -55,7 +55,7 @@ def Impz():
 	while True:
 		
 		os.system("cls && Title Impz.py                     By: LawlietJH"+\
-		          "                    v1.0.1  ")
+		          "                    "+Version)
 		
 		print("""
 		
@@ -83,8 +83,8 @@ def Impz():
 								print("\n\n\t Opción Inválida. Se Usara El 0 por Defecto.")
 								time.sleep(1.5)
 								Imp_27()
-								
 					print("\n\n\n\t\t Terminado Con Exito!")
+					time.sleep(3)
 				except KeyboardInterrupt:
 					print("\n\n\t Cancelando...")
 					time.sleep(1.5)
