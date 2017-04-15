@@ -9,7 +9,7 @@
 #                       ██║██║ ╚═╝ ██║██║     ███████╗
 #                       ╚═╝╚═╝     ╚═╝╚═╝     ╚══════╝
 #                                                         By: LawlietJH
-#                                                               v1.0.2
+#                                                               v1.0.3
 # Fuente: 'ANSI Shadow' - Desde: http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Impz
 
 import time
@@ -19,7 +19,7 @@ import os
 
 
 Autor = "LawlietJH"
-Version = "v1.0.2"
+Version = "v1.0.3"
 
 
 
@@ -35,7 +35,7 @@ def Imp_27(Minim=0):
 	print("\n\n\n\t [+] Creando Diccionario. 99% Efectivo.")
 	print("\n\t    [~] Para Hackear Redes: 'Cisco Pegatron'.")
 	print("\n\t    [~] Archivo de Salida:  'Impz-27["+str(Minim)+" - "+str(Total-1)+"].ZioN'")
-	print("\n\t    [~] Tamaño Salida Aprox:", (Total-Minim) / 100000, "Mb")
+	print("\n\t    [~] Tamaño Salida Aprox:", (Total-Minim) // 100000, "Mb")
 	print("\n\t    [~] Cantidad de Cadenas:", Total-Minim, "\n\n\n\n")
 	
 	for x in range(Minim, Total):
@@ -70,25 +70,57 @@ def Impz():
 		try:
 			Resp = int(input(""))
 			if Resp == 1:
-				try:
-					if input("\n\n\t Iniciar En Algun Punto [S/N]: ").lower() in ['s','si']:
-						try:
-							Minim = int(input("\n\n\t Elige Un Número De Inicio [ 0 - 10,000,000 ]: "))
-							if Minim >= 0 and Minim <= 10000000: Imp_27(Minim)
-							else:
-								print("\n\n\t Número Inválido. Se Usara El 0 por Defecto.")
+				while True:
+					
+					os.system("cls && Title Creación De Diccionario Con Prefijo 27. Max[10,000,000]")
+					
+					try:
+						print("\n\n\t Creación De Diccionario Con Prefijo 27. Max[10,000,000]"+\
+							  "\n\n\n\t [1] Iniciar En Algun Punto."+\
+							  "\n\t [2] Iniciar Normal [Desde 0 - 9,999,999]."+\
+							  "\n\t [0] Volver."+\
+							  "\n\n\t >>> ", end="")
+						
+						Resp2 = int(input(""))
+						
+						if Resp2 == 1:
+							try:
+								
+								Minim = int(input("\n\n\t Elige Un Número De Inicio [ 0 - 10,000,000 ]: "))
+								
+								if Minim >= 0 and Minim <= 10000000: Imp_27(Minim)
+								else:
+									print("\n\n\t Número Inválido. Se Usara El 0 por Defecto.")
+									time.sleep(1.5)
+									Imp_27()
+							except KeyboardInterrupt:
+								print("\n\n\t Cancelando...")
 								time.sleep(1.5)
-								Imp_27()
-						except:
-								print("\n\n\t Opción Inválida. Se Usara El 0 por Defecto.")
-								time.sleep(1.5)
-								Imp_27()
-					print("\n\n\n\t\t Terminado Con Exito!")
-					time.sleep(3)
-				except KeyboardInterrupt:
-					print("\n\n\t Cancelando...")
-					time.sleep(1.5)
-					return
+								break
+							except:
+									print("\n\n\t Opción Inválida. Se Usara El 0 por Defecto.")
+									time.sleep(1.5)
+									Imp_27()
+						
+							print("\n\n\n\t\t Terminado Con Exito!")
+							time.sleep(3)
+							
+						elif Resp2 == 2: Imp_27()
+						elif Resp2 == 0: break
+						else:
+							print("\n\n\n\t Elige Una Opción Correcta.")
+							time.sleep(1.5)
+						
+					except KeyboardInterrupt:
+						
+						print("\n\n\t Cancelando...")
+						time.sleep(1.5)
+						return
+					
+					except:
+						print("\n\n\n\t Elige Una Opción Correcta.")
+						time.sleep(1.5)
+			
 			elif Resp == 9: pass
 			elif Resp == 0: break
 			else:
