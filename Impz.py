@@ -9,7 +9,7 @@
 #                       ██║██║ ╚═╝ ██║██║     ███████╗
 #                       ╚═╝╚═╝     ╚═╝╚═╝     ╚══════╝
 #                                                         By: LawlietJH
-#                                                               v1.0.0
+#                                                               v1.0.1
 # Fuente: 'ANSI Shadow' - Desde: http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Impz
 
 import time
@@ -19,14 +19,15 @@ import os
 
 
 Autor = "LawlietJH"
-Version = "v1.0.0"
+Version = "v1.0.1"
 
 
 
-def Impz():
+def Imp_27(Minim=0):
+	
+	os.system("cls && Title Creando Diccionario: Impz-27.ZioN.")
 	
 	Total = 10000000
-	Minim = 0
 
 	open("Impz-27.ZioN","a")
 	Eny = open("Impz-27.ZioN","w")
@@ -47,6 +48,63 @@ def Impz():
 		
 	Eny.close()
 
+
+
+def Impz():
+	
+	while True:
+		
+		os.system("cls && Title Impz.py                     By: LawlietJH"+\
+		          "                    v1.0.1  ")
+		
+		print("""
+		
+			Menú
+		
+		[1] - Diccionario Con Prefijo 27. Max[10,000,000]
+		[9] - Info.
+		[0] - Salir
+		
+		   >>> """, end="")
+		
+		try:
+			Resp = int(input(""))
+			if Resp == 1:
+				try:
+					if input("\n\n\t Iniciar En Algun Punto [S/N]: ").lower() in ['s','si']:
+						try:
+							Minim = int(input("\n\n\t Elige Un Número De Inicio [ 0 - 10,000,000 ]: "))
+							if Minim >= 0 and Minim <= 10000000: Imp_27(Minim)
+							else:
+								print("\n\n\t Número Inválido. Se Usara El 0 por Defecto.")
+								time.sleep(1.5)
+								Imp_27()
+						except:
+								print("\n\n\t Opción Inválida. Se Usara El 0 por Defecto.")
+								time.sleep(1.5)
+								Imp_27()
+								
+					print("\n\n\n\t\t Terminado Con Exito!")
+				except KeyboardInterrupt:
+					print("\n\n\t Cancelando...")
+					time.sleep(1.5)
+					return
+			elif Resp == 9: pass
+			elif Resp == 0: break
+			else:
+				print("\n\n\n\t Elige Una Opción Correcta.")
+				time.sleep(1.5)
+		except KeyboardInterrupt:
+			print("\n\n\t Saliendo...")
+			time.sleep(1.5)
+			exit(1)
+		except:
+			print("\n\n\n\t Elige Una Opción Correcta.")
+			time.sleep(1.5)
+		
+		
+	
+	
 
 
 def Progreso(x, Total):
