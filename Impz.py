@@ -9,7 +9,7 @@
 #                       ██║██║ ╚═╝ ██║██║     ███████╗
 #                       ╚═╝╚═╝     ╚═╝╚═╝     ╚══════╝
 #                                                         By: LawlietJH
-#                                                               v1.0.8
+#                                                               v1.0.9
 # Fuente: 'ANSI Shadow' - Desde: http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Impz
 
 import time
@@ -19,7 +19,7 @@ import os
 
 
 Autor = "LawlietJH"
-Version = "v1.0.8"
+Version = "v1.0.9"
 
 
 
@@ -137,14 +137,16 @@ def Impz_27(Minim=0):
 	CantCad = Total - Minim
 	Tam = ((Total-Minim) / 100000) * 1.04
 	
-	os.system("cls && Title Creando Diccionario: Impz-27["+str(Minim)+" - "+str(Total-1)+"].ZioN")
+	Cony = str(Minim)+" - "+str(Total-1)
 	
-	open("Impz-27["+str(Minim)+" - "+str(Total-1)+"].ZioN","a")
-	Eny = open("Impz-27["+str(Minim)+" - "+str(Total-1)+"].ZioN","w")
+	os.system("cls && Title Creando Diccionario: Impz-27["+Cony+"].ZioN")
+	
+	open("Impz-27["+Cony+"].ZioN","a")
+	Eny = open("Impz-27["+Cony+"].ZioN","w")
 	
 	print("\n\n\n\t [+] Creando Diccionario. 99% Efectivo.")
 	print("\n\t    [~] Para Hackear Redes: 'Cisco Pegatron'.")
-	print("\n\t    [~] Archivo de Salida:  'Impz-27["+str(Minim)+" - "+str(Total-1)+"].ZioN'")
+	print("\n\t    [~] Archivo de Salida:  'Impz-27["+Cony+"].ZioN'")
 	print("\n\t    [~] Tamaño Salida Aprox:", Tam, "Mb")
 	print("\n\t    [~] Cantidad de Cadenas:", CantCad, "\n\n\n\n")
 	
@@ -162,7 +164,34 @@ def Impz_27(Minim=0):
 
 def Impz_28(Minim=0):
 	
-	pass
+	
+	Total = 10000000
+	CantCad = Total - Minim
+	Tam = ((Total-Minim) / 100000) * 1.04
+	
+	Cony = str(Minim)+" - "+str(Total-1)
+	
+	os.system("cls && Title Creando Diccionario: Impz-28["+Cony+"].ZioN")
+	
+	open("Impz-28["+Cony+"].ZioN","a")
+	Eny = open("Impz-28["+Cony+"].ZioN","w")
+	
+	print("\n\n\n\t [+] Creando Diccionario. 99% Efectivo.")
+	print("\n\t    [~] Para Hackear Redes: 'Cisco Pegatron'.")
+	print("\n\t    [~] Archivo de Salida:  'Impz-28["+Cony+"].ZioN'")
+	print("\n\t    [~] Tamaño Salida Aprox:", Tam, "Mb")
+	print("\n\t    [~] Cantidad de Cadenas:", CantCad, "\n\n\n\n")
+	
+	for x in range(Minim, Total):
+				
+		if x == 0: Progreso(x+1, Total)
+		else:
+			if x % 1000 == 0: Progreso(x, Total)
+		
+		Eny.write("28" + str(x).zfill(7) + "\n")
+		
+	Eny.close()
+
 
 
 
