@@ -9,7 +9,7 @@
 #                       ██║██║ ╚═╝ ██║██║     ███████╗
 #                       ╚═╝╚═╝     ╚═╝╚═╝     ╚══════╝
 #                                                         By: LawlietJH
-#                                                               v1.1.0
+#                                                               v1.1.1
 # Fuente: 'ANSI Shadow' - Desde: http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Impz
 
 import time
@@ -19,7 +19,7 @@ import os
 
 
 Autor = "LawlietJH"
-Version = "v1.1.0"
+Version = "v1.1.1"
 
 
 
@@ -233,14 +233,19 @@ def Impz():
 		
 		print("""
 		
-			Menú
-		
-		[1] - Diccionario Con Prefijo 27. Max[10,000,000]
-		[2] - Diccionario Con Prefijo 28. Max[10,000,000]
-		[9] - Info.
-		[0] - Salir
-		
-		   >>> """, end="")
+			 Menú
+	
+	[1] - Diccionario Con Prefijo 27. Max[10,000,000] - (Recomendado)
+	
+	[2] - Diccionario Con Prefijo 28. Max[10,000,000]
+	
+	[3] - Diccionario Con Prefijo 26. Max[10,000,000]
+	
+	[9] - Info.
+	
+	[0] - Salir
+	
+	   >>> """, end="")
 		
 		try:
 			
@@ -340,6 +345,62 @@ def Impz():
 									print("\n\n\t Opción Inválida. Se Usara El 0 por Defecto.")
 									time.sleep(1.5)
 									Impz_28()
+						
+							print("\n\n\n\t\t Terminado Con Exito!")
+							Pausa()
+							
+						elif Resp2 == 0: break
+						else:
+							print("\n\n\n\t Elige Una Opción Correcta.")
+							time.sleep(1.5)
+						
+					except KeyboardInterrupt:
+						print("\n\n\t Cancelando...")
+						time.sleep(1.5)
+						return
+					
+					except:
+						print("\n\n\n\t Elige Una Opción Correcta.")
+						time.sleep(1.5)
+			
+			if Resp == 3:
+				
+				while True:
+					
+					os.system("cls && Title Creación De Diccionario Con Prefijo 26. Max[10,000,000]")
+					
+					try:
+						
+						print("\n\n\t Creación De Diccionario Con Prefijo 26. Max[10,000,000]"+\
+							  "\n\n\n\t [1] Iniciar Normal [Desde 0 - 9,999,999]."+\
+							  "\n\t [2] Iniciar En Algun Punto."+\
+							  "\n\t [0] Volver."+\
+							  "\n\n\t >>> ", end="")
+						
+						Resp2 = int(input(""))
+						
+						if Resp2 == 1: Impz_26()
+						elif Resp2 == 2:
+							
+							try:
+								
+								Minim = int(input("\n\n\t Elige Un Número De Inicio [ 0 - 10,000,000 ]: "))
+								
+								if Minim >= 0 and Minim <= 10000000: Impz_26(Minim)
+								else:
+									print("\n\n\t Número Inválido. Se Usara El 0 por Defecto.")
+									time.sleep(1.5)
+									Impz_26()
+									
+							except KeyboardInterrupt:
+								print("\n\n\t Cancelando...")
+								time.sleep(1.5)
+								break
+								
+							except:
+									print("\n\n\t Opción Inválida. Se Usara El 0 por Defecto.")
+									time.sleep(1.5)
+									Impz_26()
 						
 							print("\n\n\n\t\t Terminado Con Exito!")
 							Pausa()
