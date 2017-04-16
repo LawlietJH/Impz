@@ -9,7 +9,7 @@
 #                       ██║██║ ╚═╝ ██║██║     ███████╗
 #                       ╚═╝╚═╝     ╚═╝╚═╝     ╚══════╝
 #                                                         By: LawlietJH
-#                                                               v1.0.9
+#                                                               v1.1.0
 # Fuente: 'ANSI Shadow' - Desde: http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Impz
 
 import time
@@ -19,7 +19,7 @@ import os
 
 
 Autor = "LawlietJH"
-Version = "v1.0.9"
+Version = "v1.1.0"
 
 
 
@@ -164,7 +164,6 @@ def Impz_27(Minim=0):
 
 def Impz_28(Minim=0):
 	
-	
 	Total = 10000000
 	CantCad = Total - Minim
 	Tam = ((Total-Minim) / 100000) * 1.04
@@ -192,6 +191,36 @@ def Impz_28(Minim=0):
 		
 	Eny.close()
 
+
+
+def Impz_26(Minim=0):
+	
+	Total = 10000000
+	CantCad = Total - Minim
+	Tam = ((Total-Minim) / 100000) * 1.04
+	
+	Cony = str(Minim)+" - "+str(Total-1)
+	
+	os.system("cls && Title Creando Diccionario: Impz-26["+Cony+"].ZioN")
+	
+	open("Impz-26["+Cony+"].ZioN","a")
+	Eny = open("Impz-26["+Cony+"].ZioN","w")
+	
+	print("\n\n\n\t [+] Creando Diccionario. 99% Efectivo.")
+	print("\n\t    [~] Para Hackear Redes: 'Cisco Pegatron'.")
+	print("\n\t    [~] Archivo de Salida:  'Impz-26["+Cony+"].ZioN'")
+	print("\n\t    [~] Tamaño Salida Aprox:", Tam, "Mb")
+	print("\n\t    [~] Cantidad de Cadenas:", CantCad, "\n\n\n\n")
+	
+	for x in range(Minim, Total):
+				
+		if x == 0: Progreso(x+1, Total)
+		else:
+			if x % 1000 == 0: Progreso(x, Total)
+		
+		Eny.write("26" + str(x).zfill(7) + "\n")
+		
+	Eny.close()
 
 
 
@@ -272,7 +301,6 @@ def Impz():
 					except:
 						print("\n\n\n\t Elige Una Opción Correcta.")
 						time.sleep(1.5)
-			
 			
 			if Resp == 2:
 				
