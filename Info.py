@@ -6,7 +6,7 @@ import os
 
 
 os.system("cls && Title Impz.py                "+\
-		"By: LawlietJH                v1.0.6    ")
+		"By: LawlietJH                v1.0.7    ")
 
 
 
@@ -37,7 +37,7 @@ def Info():
 		
 			[*] El segundo Digito varia entre el 6 y el 8.
 		
-		[+] El Primer Diccionario recomendado Probar es el Imp-27.ZioN.
+		[+] El Primer Diccionario recomendado Probar es el Impz-27[0 - 9999999].ZioN.
 		
 			[*] La Mayoria De Las Redes Cisco Pegatron empiezan con 27.
 		
