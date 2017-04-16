@@ -9,7 +9,7 @@
 #                       ██║██║ ╚═╝ ██║██║     ███████╗
 #                       ╚═╝╚═╝     ╚═╝╚═╝     ╚══════╝
 #                                                         By: LawlietJH
-#                                                               v1.0.5
+#                                                               v1.0.6
 # Fuente: 'ANSI Shadow' - Desde: http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Impz
 
 import time
@@ -19,8 +19,66 @@ import os
 
 
 Autor = "LawlietJH"
-Version = "v1.0.5"
+Version = "v1.0.6"
 
+
+
+#=======================================================================
+
+
+
+# Abre Una Nueva Ventana Para Ejecutar Otro Script.
+def Run(Programa=""):
+	
+	#=======================================================================
+	
+	def Chk_Dep():
+		
+		try:
+			import win32api
+			
+		except ModuleNotFoundError:
+			print("\n\n\t[!] Instalando Dependencias...\n\n\t\t")
+			os.system("Title Instalando pypiwin32 && pip install pypiwin32 > Nul && cls && Title Pandoraz.py            By: LawlietJH")
+			
+		except Exception as ex:
+			print( type(ex).__name__ )		#Ver cuando ocurre un error y poder añadirlo a las ecepciones, y no cierre el programa.
+	
+	Chk_Dep()				#~ Se instala el módulo keyboard si este no esta instalado.
+	try:
+		import win32api, win32con, win32event, win32process	# Se Importan Módulos de pypiwin32.
+		from win32com.shell.shell import ShellExecuteEx
+		from win32com.shell import shellcon
+	except:					# Si Hay Algún Error Significa Que No Se Instaló Correctamente.
+		print("\n\n   No se pudo instalar correctamente el Módulo 'pypiwin32'.")
+		print("\n   Revise Su Conexión o Instale El Módulo Manualmente Desde Consola Con:")
+		print("\n\t 'pip install keyboard'   o   ' pip3 install keyboard'")
+		
+		try:
+			os.system("Pause > Nul")
+		except KeyboardInterrupt: pass
+		
+		#~ Dat()
+		Salir(0)
+	
+	#=======================================================================
+	
+	import traceback, types
+	
+	showCmd = win32con.SW_SHOWNORMAL
+	cmd = Programa
+	params = ''
+	cmdDir = ''
+	lpVerb = ''
+	
+	procHandle = win32api.ShellExecute(0, lpVerb, cmd, params, cmdDir, showCmd)
+	#~ procInfo = ShellExecuteEx(nShow=showCmd, fMask=shellcon.SEE_MASK_NOCLOSEPROCESS, lpVerb=lpVerb, lpFile=cmd, lpParameters=params)
+	
+	#~ http://pt.stackoverflow.com/questions/6929/como-rodar-um-subprocess-com-permiss%C3%A3o-de-administrador
+
+
+
+#=======================================================================
 
 
 def Imp_27(Minim=0):
@@ -52,54 +110,12 @@ def Imp_27(Minim=0):
 
 
 
-def Info():
-	
-	print("""
-	
-		[!] ESSID = Nombre De Red.
-		[!] BSSID = Dirección MAC.
-		[!] Key WPA = Contraseña De La Red. 
-
-	[~] Información:
-	
-		[+] Las Contraseñas de estas Redes siempre son Números.
-		[+] Siempre tienen una Contraseña de 9 Digitos.
-		[+] Siempre Comienzan Con el Número 2.
-		[+] El Segundo Digito Normalmente Es el 7.
-		
-			[*] El segundo Digito varia entre el 6 y el 8.
-		
-		[+] El Primer Diccionario recomendado Probar es el Imp-27.ZioN.
-		
-			[*] La Mayoria De Las Redes Cisco Pegatron empiezan con 27.
-		
-		[+] Las Redes 'Cisco Pegatron' Se Ven De La Siguiente Manera:
-			
-			[*] Ejemplo de ESSID, BSSID y Key WPA:
-				
-				[-] ~ ESSID = 1bf0a2
-				[-] ~ BSSID = 00:71:C2:21:FE:A8
-				[-] Key WPA = 274345388
-				
-			[*] Ejemplos de ESSID's:
-				
-				[-] c3f2ba
-				[-] e922e8
-				[-] aad92a
-				[-] ab0cb8
-				[-] b5967a
-				    etc...
-			
-	""")
-
-
-
 def Impz():
 	
 	while True:
 		
-		os.system("cls && Title Impz.py                     By: LawlietJH"+\
-		          "                    "+Version)
+		os.system("cls && Title Impz.py                "+\
+		   "By: LawlietJH                "+Version+"    ")
 		
 		print("""
 		
@@ -173,8 +189,7 @@ def Impz():
 			
 			elif Resp == 9:
 				
-				Info()
-				os.system("Pause > Nul")
+				Run("Info.py")
 				
 			elif Resp == 0: break
 			else:
