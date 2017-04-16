@@ -9,7 +9,7 @@
 #                       ██║██║ ╚═╝ ██║██║     ███████╗
 #                       ╚═╝╚═╝     ╚═╝╚═╝     ╚══════╝
 #                                                         By: LawlietJH
-#                                                               v1.0.4
+#                                                               v1.0.5
 # Fuente: 'ANSI Shadow' - Desde: http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Impz
 
 import time
@@ -19,7 +19,7 @@ import os
 
 
 Autor = "LawlietJH"
-Version = "v1.0.4"
+Version = "v1.0.5"
 
 
 
@@ -49,6 +49,48 @@ def Imp_27(Minim=0):
 		Eny.write("27" + str(x).zfill(7) + "\n")
 		
 	Eny.close()
+
+
+
+def Info():
+	
+	print("""
+	
+		[!] ESSID = Nombre De Red.
+		[!] BSSID = Dirección MAC.
+		[!] Key WPA = Contraseña De La Red. 
+
+	[~] Información:
+	
+		[+] Las Contraseñas de estas Redes siempre son Números.
+		[+] Siempre tienen una Contraseña de 9 Digitos.
+		[+] Siempre Comienzan Con el Número 2.
+		[+] El Segundo Digito Normalmente Es el 7.
+		
+			[*] El segundo Digito varia entre el 6 y el 8.
+		
+		[+] El Primer Diccionario recomendado Probar es el Imp-27.ZioN.
+		
+			[*] La Mayoria De Las Redes Cisco Pegatron empiezan con 27.
+		
+		[+] Las Redes 'Cisco Pegatron' Se Ven De La Siguiente Manera:
+			
+			[*] Ejemplo de ESSID, BSSID y Key WPA:
+				
+				[-] ~ ESSID = 1bf0a2
+				[-] ~ BSSID = 00:71:C2:21:FE:A8
+				[-] Key WPA = 274345388
+				
+			[*] Ejemplos de ESSID's:
+				
+				[-] c3f2ba
+				[-] e922e8
+				[-] aad92a
+				[-] ab0cb8
+				[-] b5967a
+				    etc...
+			
+	""")
 
 
 
@@ -129,7 +171,11 @@ def Impz():
 						print("\n\n\n\t Elige Una Opción Correcta.")
 						time.sleep(1.5)
 			
-			elif Resp == 9: pass
+			elif Resp == 9:
+				
+				Info()
+				os.system("Pause > Nul")
+				
 			elif Resp == 0: break
 			else:
 				print("\n\n\n\t Elige Una Opción Correcta.")
