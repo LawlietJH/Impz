@@ -9,7 +9,7 @@
 #                       ██║██║ ╚═╝ ██║██║     ███████╗
 #                       ╚═╝╚═╝     ╚═╝╚═╝     ╚══════╝
 #                                                         By: LawlietJH
-#                                                               v1.0.6
+#                                                               v1.0.7
 # Fuente: 'ANSI Shadow' - Desde: http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Impz
 
 import time
@@ -19,7 +19,50 @@ import os
 
 
 Autor = "LawlietJH"
-Version = "v1.0.6"
+Version = "v1.0.7"
+
+
+
+# Función Que Permite Esconder El Cursor de la Pantalla (La rayita que parpadea xD).
+def HiddenCursor(imp="Hide"):
+	
+	#~ imp = imp.title()		#Devuelve la cadena solo con la primera letra de cada palabra en mayuscula
+	imp = imp.capitalize()		#Devuelve la cadena solo con la primera letra de la primer palabra en mayuscula
+
+	if os.name == 'nt':
+		import msvcrt
+		import ctypes
+
+		class _CursorInfo(ctypes.Structure):
+			_fields_ = [("size", ctypes.c_int),
+						("visible", ctypes.c_byte)]
+	
+	def hide_cursor():
+		if os.name == 'nt':
+			ci = _CursorInfo()
+			handle = ctypes.windll.kernel32.GetStdHandle(-11)
+			ctypes.windll.kernel32.GetConsoleCursorInfo(handle, ctypes.byref(ci))
+			ci.visible = False
+			ctypes.windll.kernel32.SetConsoleCursorInfo(handle, ctypes.byref(ci))
+		elif os.name == 'posix':
+			sys.stdout.write("\033[?25l")
+			sys.stdout.flush()
+
+	def show_cursor():
+		if os.name == 'nt':
+			ci = _CursorInfo()
+			handle = ctypes.windll.kernel32.GetStdHandle(-11)
+			ctypes.windll.kernel32.GetConsoleCursorInfo(handle, ctypes.byref(ci))
+			ci.visible = True
+			ctypes.windll.kernel32.SetConsoleCursorInfo(handle, ctypes.byref(ci))
+		elif os.name == 'posix':
+			sys.stdout.write("\033[?25h")
+			sys.stdout.flush()
+	
+		
+	if imp == "Hide": hide_cursor()
+	elif imp =="Show": show_cursor()
+	else: return
 
 
 
@@ -243,6 +286,8 @@ def Tiempo(sec):
 
 
 if __name__ == "__main__":
+	
+	HiddenCursor()
 	
 	try:
 		Impz()
