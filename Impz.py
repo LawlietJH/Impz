@@ -23,6 +23,12 @@ Version = "v1.0.6"
 
 
 
+def Pausa():
+	
+	os.system("Pause > Nul ")
+
+
+
 #=======================================================================
 
 
@@ -81,7 +87,7 @@ def Run(Programa=""):
 #=======================================================================
 
 
-def Imp_27(Minim=0):
+def Impz_27(Minim=0):
 	
 	Total = 10000000
 	CantCad = Total - Minim
@@ -140,24 +146,25 @@ def Impz():
 					try:
 						
 						print("\n\n\t Creación De Diccionario Con Prefijo 27. Max[10,000,000]"+\
-							  "\n\n\n\t [1] Iniciar En Algun Punto."+\
-							  "\n\t [2] Iniciar Normal [Desde 0 - 9,999,999]."+\
+							  "\n\n\n\t [1] Iniciar Normal [Desde 0 - 9,999,999]."+\
+							  "\n\t [2] Iniciar En Algun Punto."+\
 							  "\n\t [0] Volver."+\
 							  "\n\n\t >>> ", end="")
 						
 						Resp2 = int(input(""))
 						
-						if Resp2 == 1:
+						if Resp2 == 1: Impz_27()
+						elif Resp2 == 2:
 							
 							try:
 								
 								Minim = int(input("\n\n\t Elige Un Número De Inicio [ 0 - 10,000,000 ]: "))
 								
-								if Minim >= 0 and Minim <= 10000000: Imp_27(Minim)
+								if Minim >= 0 and Minim <= 10000000: Impz_27(Minim)
 								else:
 									print("\n\n\t Número Inválido. Se Usara El 0 por Defecto.")
 									time.sleep(1.5)
-									Imp_27()
+									Impz_27()
 									
 							except KeyboardInterrupt:
 								print("\n\n\t Cancelando...")
@@ -167,12 +174,11 @@ def Impz():
 							except:
 									print("\n\n\t Opción Inválida. Se Usara El 0 por Defecto.")
 									time.sleep(1.5)
-									Imp_27()
+									Impz_27()
 						
 							print("\n\n\n\t\t Terminado Con Exito!")
-							time.sleep(3)
+							Pausa()
 							
-						elif Resp2 == 2: Imp_27()
 						elif Resp2 == 0: break
 						else:
 							print("\n\n\n\t Elige Una Opción Correcta.")
